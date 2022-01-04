@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+class Warga{
+    String nama;
+    String nik;
+    int total;
+    
+void isiData(String Nama_Warga,String Nik_Warga) {
+    nama = Nama_Warga;
+    nik = Nik_Warga;
+}
+String MasukanNama(){
+    return nama;
+}
+String Masukannik(){
+    return nik;
+}
+void isiData1(int Total)
+{
+    total = Total;
+}
+int Masukantotal(){
+    return total;
+}
+}
+
+public class Iuran {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Warga k1 = new Warga();
+        String Lanjut1 = "";
+        int Total=0;
+        System.out.print("================================== \n");
+        System.out.print("Pendataan dan pembayan Iuran Warga \n");
+        System.out.print("================================== \n");
+        System.out.print("1.Input Data Warga \n");
+        System.out.print("2.Input Iuran Warga \n");
+        System.out.print("\n");
+        System.out.print("PILIHAN MENU : ");
+        int menu = input.nextInt();
+        System.out.print("================================== \n");
+        if (menu == 1){
+            System.out.print("*** Data Warga ***\n");
+            System.out.print("Masukan Nama : ");
+            String nama1 = input.nextLine();//penyakit
+            String nama = input.nextLine();
+            System.out.print("Masukan NIK : ");
+            String nik = input.nextLine();
+            k1.isiData(nama, nik);
+            System.out.print("Masukan Alamat : ");
+            String alamat = input.nextLine();
+            System.out.print("Masukan No. Tlp : ");
+            String telp = input.nextLine();
+            System.out.print("================================== \n");
+            System.out.print("***Data Pekerjaan*** \n");
+            System.out.print("Masukan Pekerjan : ");
+            String Pekerjaan = input.nextLine();
+            System.out.print("Masukan Alamat Kantor : ");
+            String Alamat2 = input.nextLine();
+            System.out.print("================================== \n");
+            System.out.print("***Data Status*** \n");
+            System.out.print("Masukan Status : ");
+            String Status = input.nextLine();
+            System.out.print("Masukan Nama Suami/Istri : ");
+            String Nama2 = input.nextLine();
+            System.out.print("Masukan Jumlah Anak : ");
+            String Anak = input.nextLine();
+            System.out.print("\n");
+            System.out.print("Lanjut Bayar Iuran ?\n");
+            String Lanjut=input.nextLine();
+            if (Lanjut.equals("ya")|| Lanjut.equals("Ya")|| Lanjut.equals("Y")|| Lanjut.equals("y"))
+                {
+                    do{
+                        System.out.print("================================== \n");
+                        System.out.print("*** Data Iuran Pokok ***\n");
+                        System.out.print("Nik  => "+ k1.Masukannik()+"\n");
+                        System.out.print("Masukan Iuran Sampah :\n");
+                        int iuranS = input.nextInt();
+                        System.out.print("Masukan Iuran Keamanan :\n");
+                        int iuranK = input.nextInt();
+                        System.out.print("\n");
+                        System.out.print("*** Data Iuran Sekunder ***\n");
+                        System.out.print("Masukan Iuran Sumbangan :\n");
+                        int Sumbangan = input.nextInt();
+                        
+                        System.out.print("Lanjut Bayar Iuran ?\n");
+                        String Lanjut3=input.nextLine();//penyakit
+                        Lanjut1=input.nextLine();
+                        if (Lanjut1.equals("tidak")|| Lanjut1.equals("Tidak")|| Lanjut1.equals("T")|| Lanjut1.equals("t")) {
+                                Total = Total + iuranS + iuranK + Sumbangan;
+                                k1.isiData1(Total);
+                                System.out.print("||NIK                           || "+k1.Masukannik()+"\n");
+                                System.out.print("||Total Pembayaran Iuran Warga  || "+k1.Masukantotal()+"\n");
+                                System.out.print("Terima Kasih "+k1.MasukanNama()+" Iuran Anda sudah dibayarkan");
+                            }
+                        }while(Lanjut1.equals("Ya")|| Lanjut1.equals("ya")|| Lanjut1.equals("Y")|| Lanjut1.equals("y"));
+                }
+        
+    }
+        if (menu ==2){
+            System.out.print("Masukan Nama : ");
+            String nama1 = input.nextLine();//penyakit
+            String nama = input.nextLine();
+            System.out.print("Masukan Nik : ");
+            String nik = input.nextLine();
+            k1.isiData(nama, nik);
+            do{
+                        System.out.print("================================== \n");
+                        System.out.print("*** Data Iuran Pokok ***\n");
+                        System.out.print("Nik  => "+ k1.Masukannik()+"\n");
+                        System.out.print("Masukan Iuran Sampah :\n");
+                        int iuranS = input.nextInt();
+                        System.out.print("Masukan Iuran Keamanan :\n");
+                        int iuranK = input.nextInt();
+                        System.out.print("\n");
+                        System.out.print("*** Data Iuran Sekunder ***\n");
+                        System.out.print("Masukan Iuran Sumbangan :\n");
+                        int Sumbangan = input.nextInt();
+                        
+                        System.out.print("Lanjut Bayar Iuran ?\n");
+                        String Lanjut3=input.nextLine();//penyakit
+                        Lanjut1=input.nextLine();
+                        if (Lanjut1.equals("tidak")|| Lanjut1.equals("Tidak")|| Lanjut1.equals("T")|| Lanjut1.equals("t")) {
+                                Total = Total + iuranS + iuranK + Sumbangan;
+                                k1.isiData1(Total);
+                                System.out.print("||NIK                           || "+k1.Masukannik()+"\n");
+                                System.out.print("||Total Pembayaran Iuran Warga  || "+k1.Masukantotal()+"\n");
+                                System.out.print("Terima Kasih "+k1.MasukanNama()+" Iuran Anda sudah dibayarkan");
+                            }
+                        }while(Lanjut1.equals("Ya")|| Lanjut1.equals("ya")|| Lanjut1.equals("Y")|| Lanjut1.equals("y"));
+        }
+    }
+    
+}
